@@ -1,0 +1,23 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "TaskSphere",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/TaskSphere": {
+      "get": {
+        "tags": [
+          "TaskSpher"
+        ],
+        "operationId": "GetData",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

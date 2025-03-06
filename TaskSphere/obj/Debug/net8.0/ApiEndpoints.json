@@ -1,0 +1,13 @@
+[
+  {
+    "ContainingType": "TaskSphere.Controllers.TaskSpherController",
+    "Method": "GetData",
+    "RelativePath": "api/TaskSphere",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [],
+    "EndpointName": "GetData"
+  }
+]

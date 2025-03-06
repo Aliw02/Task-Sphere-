@@ -1,0 +1,16 @@
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\BLL.deps.json
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\BLL.dll
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\BLL.pdb
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\DLL.dll
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\DLL.pdb
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.csproj.AssemblyReference.cache
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.AssemblyInfoInputs.cache
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.AssemblyInfo.cs
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.csproj.CoreCompileInputs.cache
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.sourcelink.json
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.csproj.Up2Date
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.dll
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\refint\BLL.dll
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\BLL.pdb
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\obj\Debug\net8.0\ref\BLL.dll

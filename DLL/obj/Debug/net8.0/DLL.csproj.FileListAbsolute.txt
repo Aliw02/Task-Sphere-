@@ -1,0 +1,12 @@
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\bin\Debug\net8.0\DLL.deps.json
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\bin\Debug\net8.0\DLL.dll
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\bin\Debug\net8.0\DLL.pdb
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\DLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\DLL.AssemblyInfoInputs.cache
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\DLL.AssemblyInfo.cs
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\DLL.csproj.CoreCompileInputs.cache
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\DLL.sourcelink.json
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\DLL.dll
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\refint\DLL.dll
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\DLL.pdb
+D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\DLL\obj\Debug\net8.0\ref\DLL.dll

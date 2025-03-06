@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6594E9FC-3D09-4B5D-AF6D-03471111ED2F}|TaskSphere.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\tasksphere\\controllers\\tasksphercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6594E9FC-3D09-4B5D-AF6D-03471111ED2F}|TaskSphere.csproj|solutionrelative:controllers\\tasksphercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0248E127-99B5-4C7F-ACE8-AA3BC291796E}|..\\BLL\\BLL.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\bll\\business.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CDB26D8-2399-4D45-B599-851D1675E1C5}|..\\DLL\\DLL.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\dll\\data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TaskSpherController.cs",
+              "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\TaskSpherController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TaskSpherController.cs",
+              "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\TaskSpherController.cs",
+              "RelativeToolTip": "Controllers\\TaskSpherController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T17:10:56.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Business.cs",
+              "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\Business.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\Business.cs",
+              "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\Business.cs",
+              "RelativeToolTip": "..\\BLL\\Business.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T17:07:50.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Data.cs",
+              "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\Data.cs",
+              "RelativeDocumentMoniker": "..\\DLL\\Data.cs",
+              "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\Data.cs",
+              "RelativeToolTip": "..\\DLL\\Data.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-05T17:08:12.692Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 68,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DLL.csproj": {
-                "projectPath": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DLL.csproj"
+              "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DAL.csproj": {
+                "projectPath": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DAL.csproj"
               }
             }
           }
@@ -73,12 +73,12 @@
         }
       }
     },
-    "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DLL.csproj": {
+    "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DLL.csproj",
-        "projectName": "DLL",
-        "projectPath": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DLL.csproj",
+        "projectUniqueName": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DAL.csproj",
+        "projectName": "DAL",
+        "projectPath": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DAL.csproj",
         "packagesPath": "C:\\Users\\AliweyAbood\\.nuget\\packages\\",
         "outputPath": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\obj\\",
         "projectStyle": "PackageReference",
@@ -118,6 +118,24 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

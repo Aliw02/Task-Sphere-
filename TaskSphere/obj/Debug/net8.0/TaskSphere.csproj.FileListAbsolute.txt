@@ -101,5 +101,4 @@ D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project
 D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\TaskSphere\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\TaskSphere\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
 D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\TaskSphere\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
-D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\TaskSphere\bin\Debug\net8.0\Config\enviromentData.env
 D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\TaskSphere\bin\Debug\net8.0\Config\appsettings.json

@@ -15,5 +15,3 @@ D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project
 D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\DAL.dll
 D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\DAL.pdb
 D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\DAL.dll.config
-D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\appsettings.json
-D:\MyFolder\ProgrammingAdvicesCourses\25-RestfulAPI-Introduction\OutSide-Project\Task-Sphere-\BLL\bin\Debug\net8.0\enviromentData.env

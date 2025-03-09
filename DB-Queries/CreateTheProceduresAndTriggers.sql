@@ -86,7 +86,7 @@
 --    @Phone NVARCHAR(20)
 --AS
 --BEGIN
---    SET NOCOUNT ON;
+--    SET NOCOUNT OFF;
 --    BEGIN TRY
 --        UPDATE Person
 --        SET FullName = @FullName,
@@ -116,7 +116,7 @@
 --    @PersonID INT
 --AS
 --BEGIN
---    SET NOCOUNT ON;
+--    SET NOCOUNT OFF;
 --    BEGIN TRY
 --        DELETE FROM Person
 --        WHERE ID = @PersonID;
@@ -146,6 +146,33 @@
 --    WHERE ID = @PersonID;
 --END;
 --GO
+
+-- Procedure: sp_GetAllPeople
+--CREATE PROCEDURE sp_GetAllPeople
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+--    SELECT *
+--    FROM Person WHERE IsActive = 1
+--END;
+--GO
+
+---- Procedure: sp_PersonIsExits
+---- Retrieves a Person record by ID.
+--CREATE PROCEDURE sp_PersonIsExist
+--    @PersonID INT,
+--    @Exists BIT OUTPUT
+--AS
+--BEGIN
+--    SET NOCOUNT ON;
+
+--    SET @Exists = CASE 
+--        WHEN EXISTS (SELECT 1 FROM Person WHERE ID = @PersonID) THEN 1
+--        ELSE 0
+--    END;
+--END;
+--GO
+
 
 ----------------------------------------------------
 ---- Employee Procedures

@@ -92,7 +92,7 @@ namespace BLL
             }
             return false;
         }
-        
+   
         public static bool DeletePerson(int ID)
         {
 

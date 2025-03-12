@@ -20,7 +20,7 @@ public class PersonDTO(int id, string fullName, DateTime birthDate, string email
     
     public string Address { get; set; } = address;
 }
-
+ 
 public class DAL_Person
 {
 

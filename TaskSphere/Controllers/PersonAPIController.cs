@@ -8,9 +8,9 @@ namespace TaskSphere.Controllers
 {
 
     //[Route("api/[controller]")]
-    [Route("api/TaskSphere")]
+    [Route("api/TaskSphere/Person")]
     [ApiController]
-    public class TaskSpherController : ControllerBase
+    public class PersonAPIController : ControllerBase
     {
 
         // ===================================

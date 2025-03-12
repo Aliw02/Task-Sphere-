@@ -1,8 +1,237 @@
 [
   {
-    "ContainingType": "TaskSphere.Controllers.TaskSpherController",
+    "ContainingType": "TaskSphere.Controllers.EmployeeAPIController",
+    "Method": "AddEmployee",
+    "RelativePath": "api/TaskSphere/Employee",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "EDTO",
+        "Type": "DAL.EmployeeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "DAL.EmployeeDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "AddEmployee"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.EmployeeAPIController",
+    "Method": "GetEmployeeByID",
+    "RelativePath": "api/TaskSphere/Employee/{ID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DAL.EmployeeDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetEmployeeByID"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.EmployeeAPIController",
+    "Method": "UpdateEmployee",
+    "RelativePath": "api/TaskSphere/Employee/{ID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "UpdatedEmployee",
+        "Type": "DAL.EmployeeDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "DAL.EmployeeDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "UpdateEmployee"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.EmployeeAPIController",
+    "Method": "DeleteEmployee",
+    "RelativePath": "api/TaskSphere/Employee/{ID}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "DeleteEmployee"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.EmployeeAPIController",
+    "Method": "GetAllEmployees",
+    "RelativePath": "api/TaskSphere/Employee/AllEmployees",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.EmployeeDTO, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetAllEmployees"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.PersonAPIController",
     "Method": "AddPerson",
-    "RelativePath": "api/TaskSphere",
+    "RelativePath": "api/TaskSphere/Person",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -45,9 +274,9 @@
     "EndpointName": "AddPerson"
   },
   {
-    "ContainingType": "TaskSphere.Controllers.TaskSpherController",
+    "ContainingType": "TaskSphere.Controllers.PersonAPIController",
     "Method": "UpdatePerson",
-    "RelativePath": "api/TaskSphere/{id}",
+    "RelativePath": "api/TaskSphere/Person/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -100,9 +329,9 @@
     "EndpointName": "UpdatePerson"
   },
   {
-    "ContainingType": "TaskSphere.Controllers.TaskSpherController",
+    "ContainingType": "TaskSphere.Controllers.PersonAPIController",
     "Method": "GetPersonByID",
-    "RelativePath": "api/TaskSphere/{ID}",
+    "RelativePath": "api/TaskSphere/Person/{ID}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -145,9 +374,9 @@
     "EndpointName": "GetPersonByID"
   },
   {
-    "ContainingType": "TaskSphere.Controllers.TaskSpherController",
+    "ContainingType": "TaskSphere.Controllers.PersonAPIController",
     "Method": "DeletePerson",
-    "RelativePath": "api/TaskSphere/{ID}",
+    "RelativePath": "api/TaskSphere/Person/{ID}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -186,9 +415,9 @@
     "EndpointName": "DeletePerson"
   },
   {
-    "ContainingType": "TaskSphere.Controllers.TaskSpherController",
+    "ContainingType": "TaskSphere.Controllers.PersonAPIController",
     "Method": "GetAllPeople",
-    "RelativePath": "api/TaskSphere/AllPeople",
+    "RelativePath": "api/TaskSphere/Person/AllPeople",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -223,5 +452,301 @@
       }
     ],
     "EndpointName": "GetAllPeople"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "GetAllTasks",
+    "RelativePath": "api/TaskSphere/Tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.TaskDTO, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetAllTasks"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "AddTask",
+    "RelativePath": "api/TaskSphere/Tasks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TDTO",
+        "Type": "DAL.TaskDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "DAL.TaskDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "AddTask"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "GetTaskByID",
+    "RelativePath": "api/TaskSphere/Tasks/{ID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "DAL.TaskDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetTaskByID"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "CompleteTask",
+    "RelativePath": "api/TaskSphere/Tasks/{ID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "CompleteTask"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "GetAllCompletedTasksByEmployee",
+    "RelativePath": "api/TaskSphere/Tasks/Completed/{UserID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.TaskDTO, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetAllCompletedTasksByEmployee"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "GetAllListedTasksByEmployee",
+    "RelativePath": "api/TaskSphere/Tasks/Listed/{UserID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "UserID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.TaskDTO, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetAllListedTasksByEmployee"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "GetAllTasksBySpecificStatus",
+    "RelativePath": "api/TaskSphere/Tasks/Status/{StatusID}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "StatusID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[DAL.TaskDTO, DAL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetAllTasksBySpecificStatus"
   }
 ]

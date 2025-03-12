@@ -40,6 +40,7 @@ use TaskSphere;
 --    ID INT IDENTITY(1,1) NOT NULL,
 --    PersonID INT NOT NULL,
 --    TitleID INT NOT NULL,
+--	Salary SMALLMONEY NOT NULL,
 --    StartDate DATE NOT NULL,
 --    EndDate DATE NOT NULL,                                    -- EndDate is now required
 --    IsActive BIT NOT NULL DEFAULT 1,                          -- 1 = active, 0 = soft-deleted
@@ -50,6 +51,43 @@ use TaskSphere;
 --    FOREIGN KEY (TitleID) REFERENCES EmployeeTitles(ID),
 --    CHECK (StartDate <= EndDate)                              -- ensures StartDate is not after EndDate
 --);
+
+
+
+---- Departments Table: Stores Departments Of The Company.
+--CREATE TABLE Departments
+--(
+--    ID INT IDENTITY(1,1) PRIMARY KEY NOT NULL,
+--	Department NVARCHAR(50) NOT NULL Unique
+--);
+
+
+---- Task Table: Stores Tasks details. 
+--CREATE TABLE Tasks (
+--    ID INT IDENTITY(1,1) PRIMARY KEY,       -- Unique Task ID
+--    ListedBy INT NOT NULL,                  -- Employee who listed the task
+--    CompletedBy INT NULL,                    -- Employee who completed the task (NULL if not completed)
+--    StatusID INT NOT NULL,                   -- Task status from TasksStatus table
+--    FOREIGN KEY (ListedBy) REFERENCES Employee(ID),  -- Reference to Employee table
+--    FOREIGN KEY (CompletedBy) REFERENCES Employee(ID), -- Reference to Employee table
+--    FOREIGN KEY (StatusID) REFERENCES TasksStatus(ID) -- Reference to TasksStatus table
+--);
+
+
+---- TaskStatus Table: Stores Tasks details. 
+--CREATE TABLE TasksStatus (
+--    ID INT IDENTITY(1,1) PRIMARY KEY,  -- Unique status ID
+--    Status NVARCHAR(50) NOT NULL   -- Status name (e.g., Pending, In Progress, Completed)
+--);
+
+
+--INSERT INTO TasksStatus (Status) 
+--VALUES 
+--    ('Pending'),
+--    ('In Progress'),
+--    ('Completed'),
+--    ('Cancelled');
+
 
 --------------------------------------------------
 -- Audit Tables for Soft-Deleted Records
@@ -80,13 +118,20 @@ use TaskSphere;
 --    DeletedDate DATETIME NOT NULL DEFAULT GETDATE()
 --);
 
-INSERT INTO EmployeeTitles (Title, Description)
-VALUES 
-('Software Engineer', 'Responsible for designing, developing, and maintaining software applications.'),
-('Project Manager', 'Oversees project planning, execution, and delivery.'),
-('Business Analyst', 'Analyzes business processes and requirements for improvements.'),
-('Quality Assurance Engineer', 'Ensures software quality through rigorous testing and validation.'),
-('HR Manager', 'Manages recruitment, employee relations, and organizational policies.'),
-('DevOps Engineer', 'Facilitates collaboration between development and operations teams.'),
-('Data Scientist', 'Analyzes and interprets complex data to drive decision-making.'),
-('UX Designer', 'Designs and enhances user interfaces to improve user experience.');
+
+
+
+--------------------------------------------------
+-- Add Sample Data To The EmployeeTitles Table
+--------------------------------------------------
+
+--INSERT INTO EmployeeTitles (Title, Description)
+--VALUES 
+--('Software Engineer', 'Responsible for designing, developing, and maintaining software applications.'),
+--('Project Manager', 'Oversees project planning, execution, and delivery.'),
+--('Business Analyst', 'Analyzes business processes and requirements for improvements.'),
+--('Quality Assurance Engineer', 'Ensures software quality through rigorous testing and validation.'),
+--('HR Manager', 'Manages recruitment, employee relations, and organizational policies.'),
+--('DevOps Engineer', 'Facilitates collaboration between development and operations teams.'),
+--('Data Scientist', 'Analyzes and interprets complex data to drive decision-making.'),
+--('UX Designer', 'Designs and enhances user interfaces to improve user experience.');

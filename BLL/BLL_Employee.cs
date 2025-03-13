@@ -9,7 +9,7 @@ namespace BLL
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = mode;
-
+        public List<TaskDTO> TaskListedByThisUser { get; set; } = [];
         public int EmployeeID { get; set; } = employeeDTO.EmpID;
         public int PersonID { get; set ; } = employeeDTO.PersonID;
         public int TitleID { get; set; } = employeeDTO.TitleID;

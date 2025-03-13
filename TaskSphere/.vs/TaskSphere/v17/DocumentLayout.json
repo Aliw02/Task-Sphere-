@@ -3,14 +3,27 @@
   "WorkspaceRootPath": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CDB26D8-2399-4D45-B599-851D1675E1C5}|..\\DLL\\DAL.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\dll\\dal_task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6594E9FC-3D09-4B5D-AF6D-03471111ED2F}|TaskSphere.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\tasksphere\\controllers\\tasksapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6594E9FC-3D09-4B5D-AF6D-03471111ED2F}|TaskSphere.csproj|solutionrelative:controllers\\tasksapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2CDB26D8-2399-4D45-B599-851D1675E1C5}|..\\DLL\\DAL.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\dll\\dal_task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0248E127-99B5-4C7F-ACE8-AA3BC291796E}|..\\BLL\\BLL.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\bll\\bll_task.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\AliweyAbood\\AppData\\Local\\SourceServer\\d80ac1ebcec1c3df67f844cc812527a7da05eae7965317611a22e96b10447aed\\TaskSphere\\Controllers\\TasksAPIController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6594E9FC-3D09-4B5D-AF6D-03471111ED2F}|TaskSphere.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\tasksphere\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6594E9FC-3D09-4B5D-AF6D-03471111ED2F}|TaskSphere.csproj|solutionrelative:controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0248E127-99B5-4C7F-ACE8-AA3BC291796E}|..\\BLL\\BLL.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\bll\\bll_employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0248E127-99B5-4C7F-ACE8-AA3BC291796E}|..\\BLL\\BLL.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\bll\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6594E9FC-3D09-4B5D-AF6D-03471111ED2F}|TaskSphere.csproj|d:\\myfolder\\programmingadvicescourses\\25-restfulapi-introduction\\outside-project\\task-sphere-\\tasksphere\\controllers\\personapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -28,11 +41,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "PersonAPIController.cs",
               "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\PersonAPIController.cs",
               "RelativeDocumentMoniker": "Controllers\\PersonAPIController.cs",
@@ -41,12 +54,11 @@
               "ViewState": "AgIAAFYAAAAAAAAAAAAIwHAAAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T05:12:14.264Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "EmployeeAPIController.cs",
               "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\EmployeeAPIController.cs",
               "RelativeDocumentMoniker": "Controllers\\EmployeeAPIController.cs",
@@ -55,18 +67,17 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-10T12:56:18.246Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TasksAPIController.cs",
               "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\TasksAPIController.cs",
               "RelativeDocumentMoniker": "Controllers\\TasksAPIController.cs",
               "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\TasksAPIController.cs",
               "RelativeToolTip": "Controllers\\TasksAPIController.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAApwIsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAcwH4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T06:54:26.107Z",
               "IsPinned": true,
@@ -82,26 +93,76 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TasksAPIController.cs",
+              "DocumentMoniker": "C:\\Users\\AliweyAbood\\AppData\\Local\\SourceServer\\d80ac1ebcec1c3df67f844cc812527a7da05eae7965317611a22e96b10447aed\\TaskSphere\\Controllers\\TasksAPIController.cs",
+              "ToolTip": "C:\\Users\\AliweyAbood\\AppData\\Local\\SourceServer\\d80ac1ebcec1c3df67f844cc812527a7da05eae7965317611a22e96b10447aed\\TaskSphere\\Controllers\\TasksAPIController.cs [Read Only]",
+              "ViewState": "AgIAACgAAAAAAAAAAAAMwDQAAAAIAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T18:36:29.273Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BLL_Employee.cs",
+              "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\BLL_Employee.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\BLL_Employee.cs",
+              "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\BLL_Employee.cs",
+              "RelativeToolTip": "..\\BLL\\BLL_Employee.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAIA1wEwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T15:21:35.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NotificationsController.cs",
+              "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\NotificationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationsController.cs",
+              "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\TaskSphere\\Controllers\\NotificationsController.cs",
+              "RelativeToolTip": "Controllers\\NotificationsController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwBYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T15:42:22.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\Notification.cs",
+              "RelativeDocumentMoniker": "..\\BLL\\Notification.cs",
+              "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\Notification.cs",
+              "RelativeToolTip": "..\\BLL\\Notification.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAApwDIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-13T12:45:53.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "BLL_Task.cs",
               "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\BLL_Task.cs",
               "RelativeDocumentMoniker": "..\\BLL\\BLL_Task.cs",
               "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\BLL\\BLL_Task.cs",
               "RelativeToolTip": "..\\BLL\\BLL_Task.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAQwCsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAhwFwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T07:05:55.516Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DAL_Task.cs",
               "DocumentMoniker": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DAL_Task.cs",
               "RelativeDocumentMoniker": "..\\DLL\\DAL_Task.cs",
               "ToolTip": "D:\\MyFolder\\ProgrammingAdvicesCourses\\25-RestfulAPI-Introduction\\OutSide-Project\\Task-Sphere-\\DLL\\DAL_Task.cs",
               "RelativeToolTip": "..\\DLL\\DAL_Task.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAIA1wLMAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwFoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T07:05:45.166Z",
               "EditorCaption": ""

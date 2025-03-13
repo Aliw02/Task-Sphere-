@@ -2,39 +2,64 @@
 using DAL;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
+using static BLL.Notification;
 
 namespace BLL
 {
 
-    public class BLL_Task(TaskDTO TDTO, BLL.BLL_Task.enMode mode = BLL_Task.enMode.AddNew)
+    public class BLL_Task
     {
         public enum enMode { AddNew = 0, Update = 1 };
-        public enMode Mode = mode;
+        public enMode Mode;
 
         public enum enTaskStatus { NotStarted = 0, InProgress = 1, Completed = 2, Cancelled = 3 };
-        public int TaskID { get; set; } = TDTO.ID;
-        public string TaskName { get; set; } = TDTO.TaskName;
-        public int TaskStatusID { get; set; } = TDTO.TaskStatusID;
-        public enTaskStatus TaskStatus { get; set; } = (enTaskStatus)TDTO.TaskStatusID;
-        public int ListedBy { get; set; } = TDTO.ListedBy;
-        public int? CompletedBy { get; set; } = TDTO.ListedBy;
-        public DateTime ListedDate { get; set; } = TDTO.ListedDate;
-        public DateTime? CompletedDate { get; set; } = TDTO.CompletedDate;
+        public int TaskID { get; set; } = -1;
+        public string TaskName { get; set; } = string.Empty;
+        public int TaskStatusID { get; set; } = -1;
+        public enTaskStatus TaskStatus { get; set; } = enTaskStatus.NotStarted;
+        public int ListedBy { get; set; } = -1;
+        public int? CompletedBy { get; set; } = -1;
+        public DateTime ListedDate { get; set; } = DateTime.MinValue;
+        public DateTime? CompletedDate { get; set; } = null;
 
-        public BLL_Employee? EmployeeHasListed { get; private set; } = BLL_Employee.Find(TDTO.ListedBy);
+        public BLL_Employee? EmployeeHasListed { get; private set; }
 
-        public BLL_Employee? EmployeeHasCompleted
-        {
-            get
-            {
-                return TDTO.CompletedBy.HasValue ? BLL_Employee.Find(TDTO.CompletedBy.Value) : null;
-            }
-            private set { }
-        }
+        public BLL_Employee? EmployeeHasCompleted{ get; private set; }
 
+        //public readonly Notification Notify = new();
 
         [JsonIgnore]
         public TaskDTO TDTO { get { return new TaskDTO(this.TaskID, this.TaskName, this.TaskStatusID, this.ListedBy, this.CompletedBy, this.ListedDate, this.CompletedDate); } }
+
+
+        public class NotificationsEventArgs(BLL_Task? task)
+        {
+            public BLL_Task? Task { get; set; } = task;
+        }
+
+        public event EventHandler<NotificationsEventArgs>? NotifyIfAdded;
+
+        //public bool IsSubscribed { get; private set => value = Notification.Subscribe(this); }
+
+        public BLL_Task(TaskDTO TDTO, enMode mode = enMode.AddNew)
+        {
+            // Initialize properties
+            this.Mode = mode;
+            this.TaskID = TDTO.ID;
+            this.TaskName = TDTO.TaskName;
+            this.TaskStatusID = TDTO.TaskStatusID;
+            this.TaskStatus = (enTaskStatus)TDTO.TaskStatusID;
+            this.ListedBy = TDTO.ListedBy;
+            this.CompletedBy = TDTO.CompletedBy;
+            this.ListedDate = TDTO.ListedDate;
+            this.CompletedDate = TDTO.CompletedDate;
+
+            this.EmployeeHasListed = BLL_Employee.Find(TDTO.ListedBy);
+            this.EmployeeHasCompleted = TDTO.CompletedBy.HasValue ? BLL_Employee.Find(TDTO.CompletedBy.Value) : null;
+
+            // ✅ Auto-subscribe to notification
+            Notification.Subscribe(this);
+        }
 
         public bool Complete()
         {
@@ -49,7 +74,11 @@ namespace BLL
             TaskDTO? TDTO = DAL_Task.Find(ID);
             if (TDTO is null)
                 return null;
-            return new BLL_Task(TDTO);
+            else
+            {
+                //OnNewTaskAdded(new BLL_Task(TDTO));
+                return new BLL_Task(TDTO);
+            }
         }
 
         public static IEnumerable<TaskDTO> GetAll()
@@ -67,8 +96,15 @@ namespace BLL
 
         bool _AddNew()
         {
-            this.TaskID = DAL_Task.AddTask(this.TDTO);
-            return this.TaskID > 0;
+            this.TaskID = DAL_Task.AddTask(this.TDTO);  
+            
+            if(this.TaskID > 0)
+            {
+                OnNewTaskAdded(this);
+                return true;
+            }
+
+            return false;
         }
 
         bool _Update()
@@ -107,12 +143,19 @@ namespace BLL
             return Tasks;
         }
 
-
         public static IEnumerable<TaskDTO> GetAllListedTasksByEmployee(int EmployeeID)
         {
             var Tasks = DAL_Task.GetListedTasksByUser(EmployeeID);
             return Tasks;
         }
-    }
 
+        protected virtual void OnNewTaskAdded(BLL_Task? task)
+        {
+            if (task is null)
+                return;
+
+            NotifyIfAdded?.Invoke(this, new NotificationsEventArgs(task));
+        }
+
+    }
 }

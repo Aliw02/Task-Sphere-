@@ -434,6 +434,37 @@
         }
       }
     },
+    "/api/TaskSphere/Notifications/TaskListting": {
+      "post": {
+        "tags": [
+          "Notifications"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/TaskSphere/Person/{ID}": {
       "get": {
         "tags": [
@@ -927,71 +958,9 @@
             }
           }
         }
-      },
-      "put": {
-        "tags": [
-          "TasksAPI"
-        ],
-        "operationId": "CompleteTask",
-        "parameters": [
-          {
-            "name": "ID",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "200": {
-            "description": "OK"
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
       }
     },
-    "/api/TaskSphere/Tasks/Completed/{UserID}": {
+    "/api/TaskSphere/Tasks/AllTasksCompletedBy/{UserID}": {
       "get": {
         "tags": [
           "TasksAPI"
@@ -1081,7 +1050,7 @@
         }
       }
     },
-    "/api/TaskSphere/Tasks/Listed/{UserID}": {
+    "/api/TaskSphere/Tasks/AllTasksListedBy/{UserID}": {
       "get": {
         "tags": [
           "TasksAPI"
@@ -1171,7 +1140,7 @@
         }
       }
     },
-    "/api/TaskSphere/Tasks/Status/{StatusID}": {
+    "/api/TaskSphere/Tasks/GetAllTasksBySpecificStatus/{StatusID}": {
       "get": {
         "tags": [
           "TasksAPI"
@@ -1261,7 +1230,7 @@
         }
       }
     },
-    "/api/TaskSphere/Tasks": {
+    "/api/TaskSphere/Tasks/GetAllTasks": {
       "get": {
         "tags": [
           "TasksAPI"
@@ -1318,7 +1287,9 @@
             }
           }
         }
-      },
+      }
+    },
+    "/api/TaskSphere/Tasks/AddNewTask": {
       "post": {
         "tags": [
           "TasksAPI"
@@ -1383,6 +1354,70 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/TaskSphere/Tasks/CompleteTask/{ID}": {
+      "put": {
+        "tags": [
+          "TasksAPI"
+        ],
+        "operationId": "CompleteTask",
+        "parameters": [
+          {
+            "name": "ID",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
           },
           "400": {
             "description": "Bad Request",

@@ -12,7 +12,7 @@ namespace BLL
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode;
 
-        public enum enTaskStatus { NotStarted = 0, InProgress = 1, Completed = 2, Cancelled = 3 };
+        public enum enTaskStatus { NotStarted = 1, InProgress = 2, Completed = 3, Cancelled = 4 };
         public int TaskID { get; set; } = -1;
         public string TaskName { get; set; } = string.Empty;
         public int TaskStatusID { get; set; } = -1;
@@ -38,6 +38,10 @@ namespace BLL
         }
 
         public event EventHandler<NotificationsEventArgs>? NotifyIfAdded;
+        public event EventHandler<NotificationsEventArgs>? NotifyIfUpdated;
+        public event EventHandler<NotificationsEventArgs>? NotifyIfTaken;
+        public event EventHandler<NotificationsEventArgs>? NotifyIfCompleted;
+        public event EventHandler<NotificationsEventArgs>? NotifyIfCancelled;
 
         //public bool IsSubscribed { get; private set => value = Notification.Subscribe(this); }
 
@@ -61,12 +65,51 @@ namespace BLL
             Notification.Subscribe(this);
         }
 
-        public bool Complete()
+        public bool Complete(int CompletedBy)
         {
             if (this.TaskStatus == enTaskStatus.Completed || this.TaskStatus == enTaskStatus.Cancelled)
                 return false;
 
-            return DAL_Task.CompleteTask(this.TDTO);
+            this.CompletedBy = CompletedBy;
+            if(DAL_Task.CompleteTask(this.TDTO))
+            {
+                this.TaskStatus = enTaskStatus.Completed;
+                this.TaskStatusID = 3; 
+                OnNewTaskNotify(this);
+                return true;
+            }
+            return false;
+        }
+
+        public bool TakeTask()
+        {
+            if (this.TaskStatus == enTaskStatus.Completed || this.TaskStatus == enTaskStatus.Cancelled)
+                return false;
+
+            this.TaskStatusID = 2;
+            if( DAL_Task.UpdateTask(this.TDTO))
+            {
+                this.TaskStatus = enTaskStatus.InProgress;
+                OnNewTaskNotify(this);
+                return true;
+            }
+            return false;
+        }
+
+        public bool CancelTask()
+        {
+            if (this.TaskStatus == enTaskStatus.Completed || this.TaskStatus == enTaskStatus.Cancelled)
+                return false;
+
+            this.TaskStatusID = 4;
+            if (DAL_Task.UpdateTask(this.TDTO))
+            {
+                this.TaskStatus = enTaskStatus.Cancelled;
+                this.TaskStatusID = 4;
+                OnNewTaskNotify(this);
+                return true;
+            }
+            return false;
         }
 
         public static BLL_Task? Find(int ID)
@@ -77,7 +120,7 @@ namespace BLL
             else
             {
                 //OnNewTaskAdded(new BLL_Task(TDTO));
-                return new BLL_Task(TDTO);
+                return new BLL_Task(TDTO, enMode.Update);
             }
         }
 
@@ -100,7 +143,8 @@ namespace BLL
             
             if(this.TaskID > 0)
             {
-                OnNewTaskAdded(this);
+                OnNewTaskNotify(this);
+                this.TaskStatus = enTaskStatus.NotStarted;
                 return true;
             }
 
@@ -109,7 +153,12 @@ namespace BLL
 
         bool _Update()
         {
-            return DAL_Task.UpdateTask(this.TDTO);
+            if( DAL_Task.UpdateTask(this.TDTO))
+            {
+                OnNewTaskNotify(this);
+                return true;
+            }
+            return false;
         }
 
         public bool Save()
@@ -131,12 +180,6 @@ namespace BLL
             return false;
         }
 
-        public static IEnumerable<TaskDTO> GetAllTasksByEmployee(int EmployeeID)
-        {
-            var Tasks = DAL_Task.GetListedTasksByUser(EmployeeID);
-            return Tasks;
-        }
-
         public static IEnumerable<TaskDTO> GetAllCompletedTasksByEmployee(int EmployeeID)
         {
             var Tasks = DAL_Task.GetCompletedTasksByUser(EmployeeID);
@@ -149,13 +192,43 @@ namespace BLL
             return Tasks;
         }
 
-        protected virtual void OnNewTaskAdded(BLL_Task? task)
+        protected virtual void OnNewTaskNotify(BLL_Task? task)
         {
             if (task is null)
                 return;
 
             NotifyIfAdded?.Invoke(this, new NotificationsEventArgs(task));
         }
+
+        protected virtual void OnTaskUpdated(BLL_Task? task)
+        {
+            if (task is null)
+                return;
+            NotifyIfUpdated?.Invoke(this, new NotificationsEventArgs(task));
+        }
+
+        protected virtual void OnTaskTaken(BLL_Task? task)
+        {
+            if (task is null)
+                return;
+            NotifyIfTaken?.Invoke(this, new NotificationsEventArgs(task));
+        }
+
+        protected virtual void OnTaskCompleted(BLL_Task? task)
+        {
+            if (task is null)
+                return;
+            NotifyIfCompleted?.Invoke(this, new NotificationsEventArgs(task));
+        }
+
+        protected virtual void OnTaskCancelled(BLL_Task? task)
+        {
+            if (task is null)
+                return;
+            NotifyIfCancelled?.Invoke(this, new NotificationsEventArgs(task));
+        }
+
+
 
     }
 }

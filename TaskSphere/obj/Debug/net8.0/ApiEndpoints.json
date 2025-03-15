@@ -230,8 +230,56 @@
   },
   {
     "ContainingType": "TaskSphere.Controllers.NotificationsController",
+    "Method": "TaskCancelled",
+    "RelativePath": "api/TaskSphere/Notifications/TaskCancelled",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TDTO",
+        "Type": "DAL.TaskDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.NotificationsController",
+    "Method": "TaskCompleted",
+    "RelativePath": "api/TaskSphere/Notifications/TaskCompleted",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TDTO",
+        "Type": "DAL.TaskDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.NotificationsController",
     "Method": "TaskListting",
     "RelativePath": "api/TaskSphere/Notifications/TaskListting",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "TDTO",
+        "Type": "DAL.TaskDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.NotificationsController",
+    "Method": "TaskTaken",
+    "RelativePath": "api/TaskSphere/Notifications/TaskTaken",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -651,6 +699,47 @@
   },
   {
     "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "CancelTask",
+    "RelativePath": "api/TaskSphere/Tasks/CancelTask/{ID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "CancelTask"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
     "Method": "CompleteTask",
     "RelativePath": "api/TaskSphere/Tasks/CompleteTask/{ID}",
     "HttpMethod": "PUT",
@@ -661,6 +750,11 @@
         "Name": "ID",
         "Type": "System.Int32",
         "IsRequired": true
+      },
+      {
+        "Name": "CompletedBy",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
@@ -764,5 +858,46 @@
       }
     ],
     "EndpointName": "GetAllTasksBySpecificStatus"
+  },
+  {
+    "ContainingType": "TaskSphere.Controllers.TasksAPIController",
+    "Method": "TakeTask",
+    "RelativePath": "api/TaskSphere/Tasks/TakeTask/{ID}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ID",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 401
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ],
+    "EndpointName": "TakeTask"
   }
 ]

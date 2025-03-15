@@ -22,23 +22,31 @@ public class DAL_Task
         };
         cmd.Parameters.AddWithValue("@TaskID", taskID);
 
-        connection.Open();
-        using var reader = cmd.ExecuteReader();
-        if (reader.Read())
+        try
         {
-            int id = reader.GetInt32(reader.GetOrdinal("ID"));
-            string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
-            int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
-            int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
-            int? completedBy = reader.IsDBNull(reader.GetOrdinal("CompletedBy"))
-                ? (int?)null
-                : reader.GetInt32(reader.GetOrdinal("CompletedBy"));
-            DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
-            DateTime? completedDate = reader.IsDBNull(reader.GetOrdinal("CompletedDate"))
-                ? (DateTime?)null
-                : reader.GetDateTime(reader.GetOrdinal("CompletedDate"));
+            connection.Open();
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                int id = reader.GetInt32(reader.GetOrdinal("ID"));
+                string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
+                int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
+                int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
+                int? completedBy = reader.IsDBNull(reader.GetOrdinal("CompletedBy"))
+                    ? (int?)null
+                    : reader.GetInt32(reader.GetOrdinal("CompletedBy"));
+                DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
+                DateTime? completedDate = reader.IsDBNull(reader.GetOrdinal("CompletedDate"))
+                    ? (DateTime?)null
+                    : reader.GetDateTime(reader.GetOrdinal("CompletedDate"));
 
-            return new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate);
+                return new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate);
+            }
+        }
+        catch (SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
         }
         return null;
     }
@@ -52,22 +60,30 @@ public class DAL_Task
             CommandType = CommandType.StoredProcedure
         };
 
-        connection.Open();
-        using var reader = cmd.ExecuteReader();
-        while (reader.Read())
+        try
         {
-            int id = reader.GetInt32(reader.GetOrdinal("ID"));
-            // Assuming the stored procedure returns TaskTitle which corresponds to TaskName in the DTO
-            string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
-            int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
-            int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
-            DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
+            connection.Open();
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(reader.GetOrdinal("ID"));
+                // Assuming the stored procedure returns TaskTitle which corresponds to TaskName in the DTO
+                string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
+                int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
+                int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
+                DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
 
-            // For listed tasks, these might not be present (set to null)
-            int? completedBy = null;
-            DateTime? completedDate = null;
+                // For listed tasks, these might not be present (set to null)
+                int? completedBy = null;
+                DateTime? completedDate = null;
 
-            tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+                tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+            }
+        }
+        catch (SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
         }
         return tasks;
     }
@@ -82,26 +98,34 @@ public class DAL_Task
         };
 
         cmd.Parameters.AddWithValue("@StatusID", StatusID);
-        connection.Open();
-        using var reader = cmd.ExecuteReader();
-        while (reader.Read())
+
+        try
         {
-            int id = reader.GetInt32(reader.GetOrdinal("ID"));
-            // Assuming the stored procedure returns TaskTitle which corresponds to TaskName in the DTO
-            string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
-            int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
-            int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
-            DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
+            connection.Open();
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(reader.GetOrdinal("ID"));
+                // Assuming the stored procedure returns TaskTitle which corresponds to TaskName in the DTO
+                string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
+                int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
+                int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
+                DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
 
-            // For listed tasks, these might not be present (set to null)
-            int? completedBy = null;
-            DateTime? completedDate = null;
+                // For listed tasks, these might not be present (set to null)
+                int? completedBy = null;
+                DateTime? completedDate = null;
 
-            tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+                tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+            }
+        }
+        catch (SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
         }
         return tasks;
     }
-
 
     /// <summary>
     /// Adds a new task.
@@ -116,7 +140,7 @@ public class DAL_Task
             CommandType = CommandType.StoredProcedure
         };
         cmd.Parameters.AddWithValue("@TaskTitle",  TDTO.TaskName);
-        cmd.Parameters.AddWithValue("@StatusID",   TDTO.TaskStatusID);
+        cmd.Parameters.AddWithValue("@StatusID",   1);
         cmd.Parameters.AddWithValue("@ListedBy",   TDTO.ListedBy);
 
 
@@ -127,11 +151,20 @@ public class DAL_Task
         };
         cmd.Parameters.Add(outputParam);
 
-        connection.Open();
-        cmd.ExecuteNonQuery();
+        try
+        {
+            connection.Open();
+            cmd.ExecuteNonQuery();
+        }
+        catch(SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
+            return -1;
+        }
+
         return (int)outputParam.Value;
     }
-
 
     public static bool UpdateTask(TaskDTO TDTO)
     {
@@ -165,9 +198,17 @@ public class DAL_Task
         };
         cmd.Parameters.Add(outputParam);
 
-        connection.Open();
-        cmd.ExecuteNonQuery();
-
+        try
+        {
+            connection.Open();
+            cmd.ExecuteNonQuery();
+        }
+        catch (SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
+            return false;
+        }
         // Check if the task was updated
         return (bool)outputParam.Value;
     }
@@ -186,9 +227,19 @@ public class DAL_Task
         };
         cmd.Parameters.AddWithValue("@TaskID", TDTO.ID);
         cmd.Parameters.AddWithValue("@CompletedBy", TDTO.CompletedBy);
-
-        connection.Open();
-        int affected = cmd.ExecuteNonQuery();
+        int affected = -1;
+        // Handle optional CompletedDate parameter
+        try
+        {
+            connection.Open();
+            affected = cmd.ExecuteNonQuery();
+        }
+        catch (SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
+            affected = -1;
+        }
         return affected > 0;
     }
 
@@ -207,22 +258,30 @@ public class DAL_Task
         };
         cmd.Parameters.AddWithValue("@UserID", userID);
 
-        connection.Open();
-        using var reader = cmd.ExecuteReader();
-        while (reader.Read())
+        try
         {
-            int id = reader.GetInt32(reader.GetOrdinal("ID"));
-            // Assuming the stored procedure returns TaskTitle which corresponds to TaskName in the DTO
-            string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
-            int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
-            int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
-            DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
+            connection.Open();
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(reader.GetOrdinal("ID"));
+                // Assuming the stored procedure returns TaskTitle which corresponds to TaskName in the DTO
+                string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
+                int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
+                int listedBy = reader.GetInt32(reader.GetOrdinal("ListedBy"));
+                DateTime listedDate = reader.GetDateTime(reader.GetOrdinal("ListedDate"));
 
-            // For listed tasks, these might not be present (set to null)
-            int? completedBy = null;
-            DateTime? completedDate = null;
+                // For listed tasks, these might not be present (set to null)
+                int? completedBy = null;
+                DateTime? completedDate = null;
 
-            tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+                tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+            }
+        }
+        catch (SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
         }
         return tasks;
     }
@@ -242,23 +301,31 @@ public class DAL_Task
         };
         cmd.Parameters.AddWithValue("@UserID", userID);
 
-        connection.Open();
-        using var reader = cmd.ExecuteReader();
-        while (reader.Read())
+        try
         {
-            int id = reader.GetInt32(reader.GetOrdinal("ID"));
-            string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
-            int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
-            // For completed tasks, the CompletedBy column must be provided by the SP.
-            int completedBy = reader.GetInt32(reader.GetOrdinal("CompletedBy"));
-            DateTime completedDate = reader.GetDateTime(reader.GetOrdinal("CompletedDate"));
+            connection.Open();
+            using var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                int id = reader.GetInt32(reader.GetOrdinal("ID"));
+                string taskName = reader.GetString(reader.GetOrdinal("TaskTitle"));
+                int taskStatusID = reader.GetInt32(reader.GetOrdinal("StatusID"));
+                // For completed tasks, the CompletedBy column must be provided by the SP.
+                int completedBy = reader.GetInt32(reader.GetOrdinal("CompletedBy"));
+                DateTime completedDate = reader.GetDateTime(reader.GetOrdinal("CompletedDate"));
 
-            // In a completed task, ListedBy and ListedDate may or may not be returned.
-            // You can choose to fill them with defaults or adjust the DTO/SP as needed.
-            int listedBy = 0;
-            DateTime listedDate = DateTime.MinValue;
+                // In a completed task, ListedBy and ListedDate may or may not be returned.
+                // You can choose to fill them with defaults or adjust the DTO/SP as needed.
+                int listedBy = 0;
+                DateTime listedDate = DateTime.MinValue;
 
-            tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+                tasks.Add(new TaskDTO(id, taskName, taskStatusID, listedBy, completedBy, listedDate, completedDate));
+            }
+        }
+        catch (SqlException ex)
+        {
+            // Handle the exception
+            Console.WriteLine(ex.Message);
         }
         return tasks;
     }

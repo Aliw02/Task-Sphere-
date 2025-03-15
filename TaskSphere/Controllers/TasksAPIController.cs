@@ -15,7 +15,6 @@ namespace TaskSphere.Controllers
         // =============== GET ===============
         // ===================================
         // For Get we use Http Get
-
         [HttpGet("{ID}", Name = "GetTaskByID")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -57,6 +56,8 @@ namespace TaskSphere.Controllers
             return Ok(Tasks); // return the list of Tasks
         }
 
+
+
         [HttpGet("GetAllTasksBySpecificStatus/{StatusID}", Name = "GetAllTasksBySpecificStatus")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -68,6 +69,8 @@ namespace TaskSphere.Controllers
                 return NotFound("No Tasks Found!");
             return Ok(Tasks); // return the list of Tasks
         }
+
+
 
         [HttpGet ("GetAllTasks", Name = "GetAllTasks")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -81,6 +84,7 @@ namespace TaskSphere.Controllers
 
             return Ok(Tasks); // return the list of Tasks
         }
+
 
 
         // ====================================
@@ -113,17 +117,64 @@ namespace TaskSphere.Controllers
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult CompleteTask(int ID)
+        public IActionResult CompleteTask(int ID, int CompletedBy)
         {
             BLL_Task? Task = BLL_Task.Find(ID);
             if (Task is null)
                 return NotFound("Task not found");
 
-            if (Task.Complete())
+            if (Task.TaskStatus == BLL_Task.enTaskStatus.InProgress)
             {
-                return Ok("Task Completed Successfully.");
+                if(Task.Complete(CompletedBy))
+                    return Ok("Task Completed Successfully.");
+                else
+                return BadRequest("Task allready completed or deleted!");
             }
-            return BadRequest("Task allready completed or deleted!");
+            else
+                return BadRequest("Task not Started yet!");
+
+        }
+
+
+        [HttpPut("TakeTask/{ID}", Name = "TakeTask")]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult TakeTask(int ID)
+        {
+            BLL_Task? Task = BLL_Task.Find(ID);
+            if (Task is null)
+                return NotFound("Task not found");
+
+            if (Task.TaskStatus == BLL_Task.enTaskStatus.NotStarted)
+            {
+                if (Task.TakeTask())
+                {
+                    return Ok("Task Taken Successfully.");
+                }
+            }
+            return BadRequest("Task allready taken or completed!");
+        }
+
+        [HttpPut("CancelTask/{ID}", Name = "CancelTask")]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult CancelTask(int ID)
+        {
+            BLL_Task? Task = BLL_Task.Find(ID);
+
+            if (Task is null)
+                return NotFound("Task not found");
+
+            if (Task.TaskStatus == BLL_Task.enTaskStatus.Completed || Task.TaskStatus == BLL_Task.enTaskStatus.Cancelled)
+                return BadRequest("Task allready completed or deleted!");
+ 
+            if ( (Task.TaskStatus == BLL_Task.enTaskStatus.InProgress || Task.TaskStatus == BLL_Task.enTaskStatus.NotStarted) && Task.CancelTask())
+            {
+                return Ok("Task Cancelled Successfully.");
+            }
+            return BadRequest("Task not Cancelled Successfully!");
         }
     }
 }
